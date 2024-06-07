@@ -18,8 +18,10 @@
             <td id="quantity"><%= bulk_discount.quantity_threshold %></td>
             <td id="link_<%=bulk_discount.id%>">
                 <%= link_to 'View', merchant_bulk_discount_path(bulk_discount.merchant, bulk_discount) %>
+                <%= button_to "Delete", merchant_bulk_discount_path(bulk_discount.merchant, bulk_discount), method: :delete %>
             </td>
             </tr>
         <% end %>
         </tbody>
     </table>
+</div>
