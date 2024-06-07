@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :items, except: [:destroy]
     resources :item_status, only: [:update]
     resources :invoices, only: [:index, :show, :update]
+    resources :bulk_discounts
+    # change to remove update and make custome patch route
   end
 
   namespace :admin do
