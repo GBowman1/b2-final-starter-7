@@ -1,5 +1,6 @@
 <div id="index_table">
     <h1>Bulk Discounts</h1>
+    <%= link_to "Create New Bulk Discount", new_merchant_bulk_discount_path(@merchant) %>
     <table>
         <thead>
         <tr>
@@ -13,8 +14,8 @@
         <% @merchant.bulk_discounts.each do |bulk_discount| %>
             <tr>
             <td><%= bulk_discount.id %></td>
-            <td><%= bulk_discount.percentage_discount %></td>
-            <td><%= bulk_discount.quantity_threshold %></td>
+            <td id="discount"><%= (bulk_discount.percentage_discount * 100).to_i %>%</td>
+            <td id="quantity"><%= bulk_discount.quantity_threshold %></td>
             <td id="link_<%=bulk_discount.id%>">
                 <%= link_to 'View', merchant_bulk_discount_path(bulk_discount.merchant, bulk_discount) %>
             </td>
