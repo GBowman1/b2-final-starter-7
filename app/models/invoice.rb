@@ -27,4 +27,5 @@ class Invoice < ApplicationRecord
 
     total_revenue - discount_sum
   end
+
 end
