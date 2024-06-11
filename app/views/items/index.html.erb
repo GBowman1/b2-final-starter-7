@@ -31,7 +31,7 @@
       <div class="column-header">
         <p>Disabled Items</p>
       </div>
-       <section id="disabled">
+        <section id="disabled">
       <% @disabled_items.each do |item| %>
         <section id="item-<%= item.id %>">
           <li><%= link_to "#{item.name}", merchant_item_path(@merchant, item) %></li>
