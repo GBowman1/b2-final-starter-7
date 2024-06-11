@@ -99,5 +99,18 @@ RSpec.describe "invoices show" do
       expect(page).to_not have_content("in progress")
     end
   end
+  # 6: Merchant Invoice Show Page: Total Revenue and Discounted Revenue
+
+  # As a merchant
+  # When I visit my merchant invoice show page
+  # Then I see the total revenue for my merchant from this invoice (not including discounts)
+  # And I see the total discounted revenue for my merchant from this invoice which includes bulk discounts in the calculation
+  it "shows the discounted revenue for this invoice" do
+    BulkDiscount.create!(percentage_discount: 0.1, quantity_threshold: 10, merchant_id: @merchant1.id)
+
+    visit merchant_invoice_path(@merchant1, @invoice_1)
+
+    expect(page).to have_content("Discounted Revenue: #{@invoice_1.discounted_revenue.to_i}")
+  end
 
 end
