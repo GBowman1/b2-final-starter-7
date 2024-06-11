@@ -1,24 +1,24 @@
-
+<%= render partial: "shared/nav" %>
 
 <div id="index_table">
     <h1>Bulk Discounts</h1>
     <%= link_to "Create New Bulk Discount", new_merchant_bulk_discount_path(@merchant) %>
-    <table>
+    <table class="table">
         <thead>
-        <tr>
-            <th>Discount ID</th>
-            <th>Discount Percentage</th>
-            <th>Quantity Threshold</th>
-            <th>Links</th>
+        <tr class="tr">
+            <th class="th1">Discount ID</th>
+            <th class="th1">Discount Percentage</th>
+            <th class="th1">Quantity Threshold</th>
+            <th class="th1">Links</th>
         </tr>
         </thead>
         <tbody>
         <% @merchant.bulk_discounts.each do |bulk_discount| %>
-            <tr>
-            <td><%= bulk_discount.id %></td>
-            <td id="discount"><%= (bulk_discount.percentage_discount * 100).to_i %>%</td>
-            <td id="quantity"><%= bulk_discount.quantity_threshold %></td>
-            <td id="link_<%=bulk_discount.id%>">
+            <tr class="tr">
+            <td style="text-align:center"><%= bulk_discount.id %></td>
+            <td style="text-align:center" id="discount"><%= (bulk_discount.percentage_discount * 100).to_i %>%</td>
+            <td style="text-align:center" id="quantity"><%= bulk_discount.quantity_threshold %></td>
+            <td style="text-align:center" id="link_<%=bulk_discount.id%>">
                 <%= link_to 'View', merchant_bulk_discount_path(bulk_discount.merchant, bulk_discount) %>
                 <%= button_to "Delete", merchant_bulk_discount_path(bulk_discount.merchant, bulk_discount), method: :delete %>
             </td>
