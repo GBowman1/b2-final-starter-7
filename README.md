@@ -4,7 +4,7 @@
 ## PROJECT INFO
 "Little Esty Shop" is a group project that requires students to build a fictitious e-commerce platform where merchants and admins can manage inventory and fulfill customer invoices.
 
-Heroku Admin url: https://final-little-shop-63a5d5f9bdaa.herokuapp.com/admin/dashboard
+Heroku Admin url: https://final-little-shop-63a5d5f9bdaa.herokuapp.com/admin/dashboard <br>
 Heroku Merchant Url: https://final-little-shop-63a5d5f9bdaa.herokuapp.com/merchants/1/dashboard
 
 ## Ideas for a potential contributor to work on/refactor next
